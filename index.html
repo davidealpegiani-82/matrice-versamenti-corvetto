@@ -10,6 +10,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <title>Matrice Versamenti e Casse — Filiale di CORVETTO (v26 periodo attivo)</title>
 
 <!-- Firebase SDKs compat -->
@@ -3403,5 +3404,16 @@ Davide`;
             }, 3000);
         }
     </script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./sw.js').catch(function (err) {
+        console.warn('SW registration failed', err);
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
